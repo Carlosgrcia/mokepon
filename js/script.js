@@ -1,6 +1,15 @@
+let ataqueJugador
+
 function cargarEventos() {
     let botonMascota = document.getElementById("boton-mascota");
     botonMascota.addEventListener("click", seleccionarMascota);
+
+    let botonFuego = document.getElementById("boton-fuego");
+    botonFuego.addEventListener("click", ataqueFuego);
+    let botonAgua = document.getElementById("boton-agua");
+    botonAgua.addEventListener("click", ataqueAgua);
+    let botonTierra = document.getElementById("boton-tierra");
+    botonTierra.addEventListener("click", ataqueTierra);
 }
 
 function seleccionarMascota() {
@@ -54,6 +63,21 @@ function seleccionarMascotaEnemigo() {
     } else if (ataqueAleatorio === 6) {
         spanMascotaEnemigo.innerHTML = "Pidgit";
     }
+}
+
+function ataqueFuego() {
+    ataqueJugador = "Fuego"
+    alert(ataqueJugador)
+}
+
+function ataqueAgua() {
+    ataqueJugador = "Agua"
+    alert(ataqueJugador)
+}
+
+function ataqueTierra() {
+    ataqueJugador = "Tierra"
+    alert(ataqueJugador)
 }
 
 function aleatorio(min, max) {
