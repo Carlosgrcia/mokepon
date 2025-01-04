@@ -1,8 +1,9 @@
 let ataqueJugador
+let ataqueEnemigo
 
 function cargarEventos() {
     let botonMascota = document.getElementById("boton-mascota");
-    botonMascota.addEventListener("click", seleccionarMascota);
+    botonMascota.addEventListener("click", seleccionarMascotaJugador);
 
     let botonFuego = document.getElementById("boton-fuego");
     botonFuego.addEventListener("click", ataqueFuego);
@@ -12,7 +13,7 @@ function cargarEventos() {
     botonTierra.addEventListener("click", ataqueTierra);
 }
 
-function seleccionarMascota() {
+function seleccionarMascotaJugador() {
     let inputHipodoge = document.getElementById("hipodoge");
     let inputCapipepo = document.getElementById("capipepo");
     let inputRatigueya = document.getElementById("ratigueya");
@@ -67,17 +68,35 @@ function seleccionarMascotaEnemigo() {
 
 function ataqueFuego() {
     ataqueJugador = "Fuego"
-    alert(ataqueJugador)
+    alert("Elegiste ataque de Fuego")
+    ataqueAleatorioEnemigo()
 }
 
 function ataqueAgua() {
     ataqueJugador = "Agua"
-    alert(ataqueJugador)
+    alert("Elegiste ataque de Agua")
+    ataqueAleatorioEnemigo()
 }
 
 function ataqueTierra() {
     ataqueJugador = "Tierra"
-    alert(ataqueJugador)
+    alert("Elegiste ataque de Tierra")
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueAleatorioEnemigo() {
+    let ataqueAleatorio = aleatorio(1,3)
+    
+    if (ataqueAleatorio == 1) {
+        ataqueEnemigo = "Fuego"
+        alert("Tu enemigo eligió Fuego")
+    } else if (ataqueAleatorio == 2) {
+        ataqueEnemigo = "Agua"
+        alert("Tu enemigo eligió Agua")
+    } else {
+        ataqueEnemigo = "Tierra"
+        alert("Tu enemigo eligió Tierra")
+    }
 }
 
 function aleatorio(min, max) {
