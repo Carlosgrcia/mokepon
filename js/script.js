@@ -10,19 +10,26 @@ function seleccionarMascota() {
     let inputLangostelvis = document.getElementById("langostelvis");
     let inputTucapalma = document.getElementById("tucapalma");
     let inputPidgit = document.getElementById("pidgit");
+    let spanMascotaJugador = document.getElementById('mascota-jugador')
 
     if (inputHipodoge.checked) {
-        alert("Seleccionaste a Hipodoge");
+        spanMascotaJugador.innerHTML = "Hipodoge";
+        alert("¡Has elegido a Hipodoge!");
     } else if (inputCapipepo.checked) {
-        alert("Seleccionaste a Capipepo");
+        spanMascotaJugador.innerHTML = "Capipepo";
+        alert("¡Has elegido a Capipepo!");
     } else if (inputRatigueya.checked) {
-        alert("Seleccionaste a Ratigueya");
+        spanMascotaJugador.innerHTML = "Ratigueya";
+        alert("¡Has elegido a Ratigueya!");
     } else if (inputLangostelvis.checked) {
-        alert("Seleccionaste a Langostelvis");
+        spanMascotaJugador.innerHTML = "Langostelvis";
+        alert("¡Has elegido a Langostelvis!");
     } else if (inputTucapalma.checked) {
-        alert("Seleccionaste a Tucapalma");
+        spanMascotaJugador.innerHTML = "Tucapalma";
+        alert("¡Has elegido a Tucapalma!");
     } else if (inputPidgit.checked) {
-        alert("Seleccionaste a Pidgit");
+        spanMascotaJugador.innerHTML = "Pidgit";
+        alert("¡Has elegido a Pidgit!");
     } else {
         alert("No seleccionaste ninguna mascota");
     }
