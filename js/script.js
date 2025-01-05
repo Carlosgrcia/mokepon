@@ -129,6 +129,25 @@ function batalla() {
     parrafo.innerHTML = `Tu mascota atacó con ${ataqueJugador}, la mascota del enemigo atacó con ${ataqueEnemigo} - ${resultado}`
     let mensajes = document.getElementById("mensajes")
     mensajes.appendChild(parrafo)
+
+    revisarVidas()
+}
+
+function revisarVidas() {
+    if (vidasJugador === 0) {
+        crearMensajeFinal("¡Lo sentimos, perdiste! 😢")
+    } else if (vidasEnemigo === 0) {
+        crearMensajeFinal("¡Felicidades, ganaste! 🎉")
+    } 
+}
+
+function crearMensajeFinal(resultadoFinal) {
+    let sectionMensajes = document.getElementById("mensajes")
+
+    let parrafo = document.createElement("p")
+
+    parrafo.innerHTML = resultadoFinal
+    sectionMensajes.appendChild(parrafo)
 }
 
 function aleatorio(min, max) {
