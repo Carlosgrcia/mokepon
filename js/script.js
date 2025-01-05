@@ -29,8 +29,8 @@ function seleccionarMascotaJugador() {
         spanMascotaJugador.innerHTML = "Capipepo";
         alert("¡Has elegido a Capipepo!");
     } else if (inputRatigueya.checked) {
-        spanMascotaJugador.innerHTML = "Ratigueya";
-        alert("¡Has elegido a Ratigueya!");
+        spanMascotaJugador.innerHTML = "Ratigüeya";
+        alert("¡Has elegido a Ratigüeya!");
     } else if (inputLangostelvis.checked) {
         spanMascotaJugador.innerHTML = "Langostelvis";
         alert("¡Has elegido a Langostelvis!");
@@ -56,7 +56,7 @@ function seleccionarMascotaEnemigo() {
     } else if (ataqueAleatorio === 2) {
         spanMascotaEnemigo.innerHTML = "Capipepo";
     } else if (ataqueAleatorio === 3) {
-        spanMascotaEnemigo.innerHTML = "Ratigueya";
+        spanMascotaEnemigo.innerHTML = "Ratigüeya";
     } else if (ataqueAleatorio === 4) {
         spanMascotaEnemigo.innerHTML = "Langostelvis";
     } else if (ataqueAleatorio === 5) {
@@ -67,20 +67,20 @@ function seleccionarMascotaEnemigo() {
 }
 
 function ataqueFuego() {
-    ataqueJugador = "Fuego"
-    alert("Elegiste ataque de Fuego")
+    ataqueJugador = "Fuego 🔥"
+    alert("Elegiste ataque de Fuego 🔥")
     ataqueAleatorioEnemigo()
 }
 
 function ataqueAgua() {
-    ataqueJugador = "Agua"
-    alert("Elegiste ataque de Agua")
+    ataqueJugador = "Agua 💧"
+    alert("Elegiste ataque de Agua 💧")
     ataqueAleatorioEnemigo()
 }
 
 function ataqueTierra() {
-    ataqueJugador = "Tierra"
-    alert("Elegiste ataque de Tierra")
+    ataqueJugador = "Tierra 🌱"
+    alert("Elegiste ataque de Tierra 🌱")
     ataqueAleatorioEnemigo()
 }
 
@@ -88,22 +88,36 @@ function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(1,3)
     
     if (ataqueAleatorio == 1) {
-        ataqueEnemigo = "Fuego"
-        alert("Tu enemigo eligió Fuego")
+        ataqueEnemigo = "Fuego 🔥"
+        alert("Tu enemigo eligió Fuego 🔥")
     } else if (ataqueAleatorio == 2) {
-        ataqueEnemigo = "Agua"
-        alert("Tu enemigo eligió Agua")
+        ataqueEnemigo = "Agua 💧"
+        alert("Tu enemigo eligió Agua 💧")
     } else {
-        ataqueEnemigo = "Tierra"
-        alert("Tu enemigo eligió Tierra")
+        ataqueEnemigo = "Tierra 🌱"
+        alert("Tu enemigo eligió Tierra 🌱")
     }
 
-    crearMensaje()
+    batalla()
 }
 
-function crearMensaje() {
+function batalla() {
+    let resultado
+
+    if (ataqueJugador === ataqueEnemigo) {
+        resultado = "¡EMPATE! 🤝"
+    } else if (
+        (ataqueJugador === "Fuego 🔥" && ataqueEnemigo === "Tierra 🌱") ||
+        (ataqueJugador === "Agua 💧" && ataqueEnemigo === "Fuego 🔥") ||
+        (ataqueJugador === "Tierra 🌱" && ataqueEnemigo === "Agua 💧")
+    ) {
+        resultado = "¡GANASTE! 🎉"
+    } else {
+        resultado = "¡PERDISTE! 😢"
+    }
+
     let parrafo = document.createElement("p")
-    parrafo.innerHTML = `Tu mascota atacó con ${ataqueJugador}, la mascota del enemigo atacó con ${ataqueEnemigo}, ¡Ganaste!🎉.`
+    parrafo.innerHTML = `Tu mascota atacó con ${ataqueJugador}, la mascota del enemigo atacó con ${ataqueEnemigo} - ${resultado}`
     let mensajes = document.getElementById("mensajes")
     mensajes.appendChild(parrafo)
 }
