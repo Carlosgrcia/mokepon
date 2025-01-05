@@ -13,7 +13,11 @@ function cargarEventos() {
     botonAgua.addEventListener("click", ataqueAgua);
     let botonTierra = document.getElementById("boton-tierra");
     botonTierra.addEventListener("click", ataqueTierra);
+
+    let botonReiniciar = document.getElementById("boton-reiniciar");
+    botonReiniciar.addEventListener("click", reiniciarJuego);
 }
+
 
 function seleccionarMascotaJugador() {
     let inputHipodoge = document.getElementById("hipodoge");
@@ -70,19 +74,16 @@ function seleccionarMascotaEnemigo() {
 
 function ataqueFuego() {
     ataqueJugador = "Fuego 🔥"
-    alert("Elegiste ataque de Fuego 🔥")
     ataqueAleatorioEnemigo()
 }
 
 function ataqueAgua() {
     ataqueJugador = "Agua 💧"
-    alert("Elegiste ataque de Agua 💧")
     ataqueAleatorioEnemigo()
 }
 
 function ataqueTierra() {
     ataqueJugador = "Tierra 🌱"
-    alert("Elegiste ataque de Tierra 🌱")
     ataqueAleatorioEnemigo()
 }
 
@@ -91,13 +92,10 @@ function ataqueAleatorioEnemigo() {
     
     if (ataqueAleatorio == 1) {
         ataqueEnemigo = "Fuego 🔥"
-        alert("Tu enemigo eligió Fuego 🔥")
     } else if (ataqueAleatorio == 2) {
         ataqueEnemigo = "Agua 💧"
-        alert("Tu enemigo eligió Agua 💧")
     } else {
         ataqueEnemigo = "Tierra 🌱"
-        alert("Tu enemigo eligió Tierra 🌱")
     }
 
     batalla()
@@ -148,6 +146,19 @@ function crearMensajeFinal(resultadoFinal) {
 
     parrafo.innerHTML = resultadoFinal
     sectionMensajes.appendChild(parrafo)
+
+    let botonFuego = document.getElementById("boton-fuego")
+    botonFuego.disabled = true
+
+    let botonAgua = document.getElementById("boton-agua")
+    botonAgua.disabled = true
+
+    let botonTierra = document.getElementById("boton-tierra")
+    botonTierra.disabled = true
+}
+
+function reiniciarJuego() {
+    location.reload()
 }
 
 function aleatorio(min, max) {
