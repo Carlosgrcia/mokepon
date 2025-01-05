@@ -1,5 +1,7 @@
 let ataqueJugador
 let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
 
 function cargarEventos() {
     let botonMascota = document.getElementById("boton-mascota");
@@ -104,6 +106,9 @@ function ataqueAleatorioEnemigo() {
 function batalla() {
     let resultado
 
+    let spanVidasJugador = document.getElementById('vidas-jugador')
+    let spanVidasEnemigo = document.getElementById('vidas-enemigo')
+
     if (ataqueJugador === ataqueEnemigo) {
         resultado = "¡EMPATE! 🤝"
     } else if (
@@ -112,8 +117,12 @@ function batalla() {
         (ataqueJugador === "Tierra 🌱" && ataqueEnemigo === "Agua 💧")
     ) {
         resultado = "¡GANASTE! 🎉"
+        vidasEnemigo--
+        spanVidasEnemigo.innerHTML = vidasEnemigo
     } else {
         resultado = "¡PERDISTE! 😢"
+        vidasJugador--
+        spanVidasJugador.innerHTML = vidasJugador
     }
 
     let parrafo = document.createElement("p")
