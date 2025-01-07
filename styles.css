@@ -52,19 +52,46 @@ body {
 .tarjeta-de-mokepon {
     width: 200px;
     height: 200px;
-    background-color: aquamarine;
     padding: 10px;
     box-sizing: border-box;
-    border: 2px solid transparent;
+    border: none;
     cursor: pointer;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
+    background-position: center;
 }
 
+/* Backgrounds específicos para cada Mokepon */
+#hipodoge + .tarjeta-de-mokepon {
+    background-image: url('./assets/Mokepón\ 1.svg');
+}
+
+#capipepo + .tarjeta-de-mokepon {
+    background-image: url('./assets/Mokepón\ 2.svg');
+}
+
+#ratigueya + .tarjeta-de-mokepon {
+    background-image: url('./assets/Mokepón\ 3.svg');
+}
+
+#langostelvis + .tarjeta-de-mokepon {
+    background-image: url('./assets/Mokepón\ 4.svg');
+}
+
+#tucapalma + .tarjeta-de-mokepon {
+    background-image: url('./assets/Mokepón\ 5.svg');
+}
+
+#pidgit + .tarjeta-de-mokepon {
+    background-image: url('./assets/Mokepón\ 6.svg');
+}
+
+/* Mantener los estilos de hover y selección */
 .tarjeta-de-mokepon:hover {
-    background-color: #89CFF3;
+    background-color: rgba(137, 207, 243, 0.7); /* Color semi-transparente */
 }
 
 /* Ocultar completamente los radio buttons */
@@ -80,8 +107,8 @@ input[type="radio"] {
 
 /* Mantener el estilo cuando está seleccionado */
 input[type="radio"]:checked + .tarjeta-de-mokepon {
-    border: 2px solid #2B5096;
-    background-color: #89CFF3;
+    border: 4px solid #2B5096;
+    background-color: rgba(137, 207, 243, 0.7);
 }
 
 label {
@@ -104,8 +131,9 @@ button {
 
 #boton-mascota {
     margin-top: 30px;
-    width: 200px;
-    height: 60px;
+    width: auto;
+    height: auto;
+    padding: 15px 30px;
     border-radius: 20px;
     background-color: #2B5096;
     color: white;
