@@ -6,45 +6,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MOKEPON!</title>
         <script src="./js/script.js"></script>
+        <link rel="stylesheet" href="./styles.css">
     </head>
 
     <body>
-        <h1>MOKEPON! 🔥💧🌱</h1>
+        <div class="titulo">
+            <img src="https://fontmeme.com/permalink/250106/a1ca216164882311aa53254393f3b1be.png" alt="Mokepon Logo">
+        </div>
 
         <section id="seleccionar-mascota">
-            <h2>Elige tu mascota</h2>
+            <h2 class="subtitulo">Elige tu mascota</h2>
 
-            <label for="hipodoge">
-                <input type="radio" name="mascota" id="hipodoge" />
-                Hipodoge
-            </label>
+            <div class="tarjetas">
+                <div class="tarjeta-contenedor">
+                    <input type="radio" name="mascota" id="hipodoge" />
+                    <label class="tarjeta-de-mokepon" for="hipodoge">
+                        <img src="./assets/hipodoge.png" alt="Hipodoge">
+                    </label>
+                    <p class="nombre-mokepon">Hipodoge</p>
+                </div>
+    
+                <div class="tarjeta-contenedor">
+                    <input type="radio" name="mascota" id="capipepo" />
+                    <label class="tarjeta-de-mokepon" for="capipepo">
+                        <img src="./assets/capipepo.png" alt="Capipepo">
+                    </label>
+                    <p class="nombre-mokepon">Capipepo</p>
+                </div>
+    
+                <div class="tarjeta-contenedor">
+                    <input type="radio" name="mascota" id="ratigueya" />
+                    <label class="tarjeta-de-mokepon" for="ratigueya">
+                        <img src="./assets/ratigueya.png" alt="Ratigüeya">
+                    </label>
+                    <p class="nombre-mokepon">Ratigüeya</p>
+                </div>
+    
+                <div class="tarjeta-contenedor">
+                    <input type="radio" name="mascota" id="langostelvis" />
+                    <label class="tarjeta-de-mokepon" for="langostelvis">
+                        <img src="./assets/langostelvis.png" alt="Langostelvis">
+                    </label>
+                    <p class="nombre-mokepon">Langostelvis</p>
+                </div>
+    
+                <div class="tarjeta-contenedor">
+                    <input type="radio" name="mascota" id="tucapalma" />
+                    <label class="tarjeta-de-mokepon" for="tucapalma">
+                        <img src="./assets/tucapalma.png" alt="Tucapalma">
+                    </label>
+                    <p class="nombre-mokepon">Tucapalma</p>
+                </div>
+    
+                <div class="tarjeta-contenedor">
+                    <input type="radio" name="mascota" id="pidgit" />
+                    <label class="tarjeta-de-mokepon" for="pidgit">
+                        <img src="./assets/pidgit.png" alt="Pidgit">
+                    </label>
+                    <p class="nombre-mokepon">Pidgit</p>
+                </div>
+            </div>
 
-            <label for="capipepo">
-                <input type="radio" name="mascota" id="capipepo" />
-                Capipepo
-            </label>
-
-            <label for="ratigueya">
-                <input type="radio" name="mascota" id="ratigueya" />
-                Ratigüeya
-            </label>
-
-            <label for="langostelvis">
-                <input type="radio" name="mascota" id="langostelvis" />
-                Langostelvis
-            </label>
-
-            <label for="tucapalma">
-                <input type="radio" name="mascota" id="tucapalma" />
-                Tucapalma
-            </label>
-
-            <label for="pidgit">
-                <input type="radio" name="mascota" id="pidgit" />
-                Pidgit
-            </label>
-
-            <button id="boton-mascota">Seleccionar</button>
+            <button id="boton-mascota">Continuar</button>
         </section>
 
         <section id="seleccionar-ataque">

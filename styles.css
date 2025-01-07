@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wdth,wght@75..125,300..700&family=Quicksand:wght@500&display=swap');
+
+body {
+    font-family: "Fredoka", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:"wdth" 100;
+    background-color: white;
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titulo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.titulo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.subtitulo {
+    color: #041562;
+}
+
+.tarjetas {
+    display: flex;
+    gap: 20px;
+}
+
+.tarjeta-contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.nombre-mokepon {
+    margin: 0;
+    font-size: 16px;
+    color: #2B5096;
+    font-weight: 600;
+}
+
+.tarjeta-de-mokepon {
+    width: 200px;
+    height: 200px;
+    background-color: aquamarine;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-de-mokepon:hover {
+    background-color: #89CFF3;
+}
+
+/* Ocultar completamente los radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+/* Estilo cuando la tarjeta está activa (al hacer clic) */
+.tarjeta-de-mokepon:active {
+    border: 2px solid #2B5096;
+    background-color: #89CFF3;
+}
+
+/* Mantener el estilo cuando está seleccionado */
+input[type="radio"]:checked + .tarjeta-de-mokepon {
+    border: 2px solid #2B5096;
+    background-color: #89CFF3;
+}
+
+label {
+    background-color: lightcoral;
+    width: 310px;
+    height: 50px;
+}
+
+input {
+    background-color: aqua;
+    width: 310px;
+    height: 50px;
+}
+
+button {
+    background-color: blueviolet;
+    width: 310px;
+    height: 50px;
+}
+
+#boton-mascota {
+    margin-top: 30px;
+    width: 200px;
+    height: 60px;
+    border-radius: 20px;
+    background-color: #2B5096;
+    color: white;
+    border: none;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+#boton-mascota:hover {
+    background-color: #3a67c0;
+}
+
+#boton-mascota:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}

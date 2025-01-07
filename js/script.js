@@ -11,6 +11,25 @@ function cargarEventos() {
     sectionReiniciar.style.display = "none"
 
     let botonMascota = document.getElementById("boton-mascota");
+    botonMascota.disabled = true  // Inicialmente deshabilitado
+    
+    // Agregar event listeners a los radio buttons
+    let inputHipodoge = document.getElementById("hipodoge");
+    let inputCapipepo = document.getElementById("capipepo");
+    let inputRatigueya = document.getElementById("ratigueya");
+    let inputLangostelvis = document.getElementById("langostelvis");
+    let inputTucapalma = document.getElementById("tucapalma");
+    let inputPidgit = document.getElementById("pidgit");
+
+    // Array de inputs para manejarlos más fácilmente
+    let inputs = [inputHipodoge, inputCapipepo, inputRatigueya, 
+                  inputLangostelvis, inputTucapalma, inputPidgit];
+
+    // Agregar event listener a cada input
+    inputs.forEach(input => {
+        input.addEventListener('change', habilitarBoton);
+    });
+
     botonMascota.addEventListener("click", seleccionarMascotaJugador);
 
     let botonFuego = document.getElementById("boton-fuego");
@@ -24,6 +43,10 @@ function cargarEventos() {
     botonReiniciar.addEventListener("click", reiniciarJuego);
 }
 
+function habilitarBoton() {
+    let botonMascota = document.getElementById("boton-mascota");
+    botonMascota.disabled = false;
+}
 
 function seleccionarMascotaJugador() {
     let sectionSeleccionarMascota = document.getElementById("seleccionar-mascota")
